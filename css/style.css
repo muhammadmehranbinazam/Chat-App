@@ -1,0 +1,81 @@
+*{
+    margin:0px;
+    padding: 0px;
+}
+.logout{
+    height: 5%;
+    width:100%;
+    background-color: blueviolet;
+    color: white;
+    font-size: 20px;
+}
+.logout button{
+    height: 100%;
+    width: 100%;
+    /* border-radius: 5px; */
+}
+.chat-room{
+    display: flex;
+    background-image: url("../img/background.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    margin: auto;
+    
+}
+.sender{
+    position: absolute;
+    top:10%;
+    background-color: blue;
+    margin: 5px;
+    padding: 10px;
+    color: white;
+    float: left;
+    height: 5%;
+    border-radius: 5px;
+}
+.reciever{
+    background-color: orange;
+    margin: 5px;
+    padding: 10px;
+    color: white;
+    position: absolute;
+    top: 20%;
+    right: 5px;
+    height: 5%;
+    border-radius: 5px;
+}
+p{
+    padding: 5px;
+    font-size: 20px;
+}
+.send{
+    position: absolute;
+    bottom: 0px;
+    width:100%;
+    display: flex;
+}
+input[type="text"]{
+    width: 80%;
+    padding: 10px;
+    font-size: 30px;
+    border-width: 0px;
+    border-color: white;
+    outline-color: white;
+    margin: 0px;
+    float: left;
+    /* display: flex; */
+}
+
+input[type="button"]{
+    background-color: blueviolet;
+    color: white;
+    font-size: 20px;
+    width: 20%;
+    height: 60px;
+    margin: 0px;
+    border-color:  blueviolet;
+    outline-color: blueviolet;
+    float: right;
+}

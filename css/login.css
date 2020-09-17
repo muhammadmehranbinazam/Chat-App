@@ -1,0 +1,57 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    
+}
+body{
+    height: 100vh;
+    width: 100vw;
+}
+.login-form{
+    position: absolute;
+    top: 50%;
+   left: 50%;
+   transform: translate(-30%, -60%);
+    width: 40%;
+   /* margin: auto;  */
+   
+}
+#message{
+    background-color: crimson;
+    color: white;
+    font-size: 20px;
+    width: 50%;
+    
+
+}
+input{
+    
+    margin: auto;
+    margin: 5px;
+    padding: 10px;
+    width: 30%;
+    
+}
+input[type='button']{
+    background-color: crimson;
+    color: white;
+    border-color: crimson;
+    outline-color: crimson;
+    border-radius: 5px;
+    font-size: 20px;
+    width: 50%;
+    margin: 10px auto;
+    display: inline-block;
+}
+input[id='facebook']{
+    background-color: rgb(125, 5, 236);
+    color: white;
+    border-color: rgb(125, 5, 236);
+    outline-color: rgb(125, 5, 236);
+    border-radius: 5px;
+    font-size: 20px;
+    width: 50%;
+    margin: auto;
+    display: inline-block;
+    align-self: center;
+}
