@@ -27,12 +27,16 @@
 .sender{
     position: absolute;
     top:10%;
-    background-color: blue;
-    margin: 5px;
-    padding: 10px;
-    color: white;
+    color: black;
     float: left;
     height: 5%;
+   
+}
+.sms{
+    background-color: blue;
+    color: white;
+    margin: 5px;
+    padding: 10px;
     border-radius: 5px;
 }
 .reciever{

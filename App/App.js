@@ -1,3 +1,4 @@
+
 let emaillogin = () =>{
     var email = document.getElementById('email').value;
     var password = document.getElementById('pass').value;
@@ -22,6 +23,7 @@ let emailLogin =()=>{
     firebase.auth().signInWithEmailAndPassword(email, password)
     .then(function(result){
 
+      
         window.location='chat.html'
     })
     .catch(function(error) {
@@ -32,6 +34,7 @@ let emailLogin =()=>{
       });
 }
 
+
 let logout=()=>{
     firebase.auth().signOut().then(function() {
         window.location="login.html"
@@ -39,15 +42,19 @@ let logout=()=>{
         // An error happened.
       });
 }
-
-let facebookLogin=()=>{
+let facebookLogin=(userName)=>{
     var provider = new firebase.auth.FacebookAuthProvider();
+    
     firebase.auth().signInWithPopup(provider).then(function(result) {
         // This gives you a Facebook Access Token. You can use it to access the Facebook API.
         var token = result.credential.accessToken;
         // The signed-in user info.
         var user = result.user;
+        sessionStorage.setItem("userName",user.displayName);
+        let userName=sessionStorage.getItem('userName')
+        firebase.database().ref().push(userName);
         window.location='chat.html';
+        
         // ...
       }).catch(function(error) {
         // Handle Errors here.
@@ -59,3 +66,31 @@ let facebookLogin=()=>{
         // ...
       });
 }
+
+ let send=()=>{
+  let message=document.getElementById('sms').value;
+  let user = sessionStorage.getItem("userName");
+  var chatObj={
+    userName:user,
+    chatMessasge:message
+  }
+  firebase.database().ref().push(chatObj);
+  document.getElementById('sms').value="";
+ getData()
+}
+let chat;
+let getData=()=>{
+  firebase.database().ref().once('child_added',function(data){
+    chat=data.val();
+    console.log(chat.chatMessasge)
+  
+  var ptag=document.createElement('p');
+  ptag.setAttribute('class','sms');
+  chatmsg=document.createTextNode(chat.chatMessasge)
+  ptag.appendChild(chatmsg)
+  addmsg=document.getElementById('sendersms');
+  addmsg.appendChild(ptag)
+  })
+  
+}
+window.onload="getData()";

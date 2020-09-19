@@ -8,6 +8,7 @@
     <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-database.js"></script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
@@ -38,18 +39,18 @@
         </div>
         <!-- sender chat -->
 
-        <div class="sender">
-            <p id="sender">hello wordl how are you i am fine</p>
+        <div class="sender" id="sendersms">
+            <!-- <p id="sender">hello wordl how are you i am fine</p> -->
         </div>
 
         <!-- reciver cat -->
 
         <div class="reciever">
-            <p id="reciever">hi</p>
+            <!-- <p id="reciever">hi</p> -->
         </div>
         <div class="send">
-            <input type="text" id="message">
-            <input type="button" onclick="send" value="Send">
+            <input type="text" id="sms">
+            <input type="button" onclick="send()" value="Send">
         </div>
     </div>
     
