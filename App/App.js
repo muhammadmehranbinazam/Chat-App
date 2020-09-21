@@ -37,7 +37,7 @@ let emailLogin =()=>{
 
 let logout=()=>{
     firebase.auth().signOut().then(function() {
-        window.location="login.html"
+        window.location="index.html"
       }).catch(function(error) {
         // An error happened.
       });
